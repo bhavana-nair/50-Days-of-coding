@@ -1,0 +1,42 @@
+/**
+ * @param {string} word
+ * @return {boolean}
+ */
+var detectCapitalUse = function(word) {
+    let result=false;
+    let caps=0;
+    let small=0;
+    let arr = word.split("");
+if (arr.length==1){
+  if( arr[0]== arr[0].toUpperCase() || arr[0]!= arr[0].toUpperCase() ){
+result = true;
+  }
+}
+else{
+    if( arr[0]== arr[0].toUpperCase()) {   
+    Loop1:
+    for(i=1;i<arr.length; i++){
+if( arr[i]== arr[i].toUpperCase()) {
+caps++;
+}
+else if( arr[i]!= arr[i].toUpperCase()) {
+small++;
+}
+    }  
+    if(caps==arr.length-1||small==arr.length-1) {
+result = true;
+    }
+    }
+    else if (arr[0]!= arr[0].toUpperCase()){
+        result= true;
+          Loop2:
+    for(i=0;i<arr.length; i++){
+if( arr[i]== arr[i].toUpperCase()) {
+result= false;
+break Loop2
+}
+    }   
+    }
+}
+    return result;
+};

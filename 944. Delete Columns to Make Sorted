@@ -1,0 +1,23 @@
+/**
+ * @param {string[]} strs
+ * @return {number}
+ */
+var minDeletionSize = function(strs) {
+    let num=0;
+     let lcl=[];
+    Loop1:
+    for (i=0; i<strs.length-1; i++){
+let arr1= strs[i].split("");
+let arr2= strs[i+1].split("");
+ for (j=0; j<arr1.length ; j++){
+    let temp= lcl.includes(j);
+    if (temp==false){
+if(arr1[j] > arr2[j]){
+num++;
+lcl.push(j);
+}
+ }
+    }
+    }
+    return num;
+};

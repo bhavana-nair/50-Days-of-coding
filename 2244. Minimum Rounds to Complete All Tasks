@@ -1,0 +1,55 @@
+// attempt not working
+
+
+
+/**
+ * @param {number[]} tasks
+ * @return {number}
+ */
+var minimumRounds = function(tasks) {
+    
+    let result=0;
+    let balance=0;
+    let pre=[];
+    Loop1:
+    for (i=0; i<tasks.length; i++){
+     let x= pre.includes(tasks[i]);
+        if(x!=true){
+         let val=1;
+ for (j=i+1; j<tasks.length; j++){
+if (tasks[i]==tasks[j]){
+val++;
+}
+ }
+ console.log(val)
+//  if (val%3==0 ||val%3==2){
+//      if(val%3==0){
+//  result= result+Math.floor(val/3);
+//     }
+// else{
+//     result= result+1+Math.floor(val/3);
+// }
+/pre.push(tasks[i]);
+// }
+
+// else if (val%2==0){
+  
+//     result= result+Math.floor(val/2);
+
+// pre.push(tasks[i]);
+// }
+
+// else {
+//     result=-1
+//     break Loop1;
+// }
+
+        if(val==1) return -1;
+        else
+        {
+            result+=Math.ceil(val/3.0);
+        }
+    }
+}
+    return result;
+};
